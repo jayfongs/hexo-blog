@@ -174,10 +174,30 @@ input::-ms-input-placeholder{
 
 多数用于移动端
 
+```css
+input, select{
+    -webkit-appearance: none;   /*去除系统默认appearance的样式，常用于IOS，Android下移除原生样式*/
+}
+```
+
 __注：`-webkit-appearance` 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。
 此属性非标准且渲染效果在不同浏览器下不同，有些属性值甚至不支持，请慎用。__
 
-## Flex布局
+## 自动换行
 
-Flex是Flexible Box的缩写，意为“弹性布局”，用来为盒状模型提供最大的灵活性
-[点我了解更多Flex布局](/articles/css3-flex-layout.html)
+在网页上任何标签中的英文自动换行
+
+``` css
+element{
+    word-break: break-all; /*允许在单词内换行，只对英文起作用（以字母作为换行依据）*/
+}
+element{
+    word-wrap: break-word; /*在长单词或 URL 地址内部进行换行，只对英文起作用（以单词作为换行依据）*/
+}
+element{
+    white-space: pre-wrap; /*保留空白符序列，但是正常地进行换行，只对中文起作用*/
+}
+element{
+    white-space: nowrap; /*默认。空白会被浏览器忽略，都会起作用*/
+}
+```
